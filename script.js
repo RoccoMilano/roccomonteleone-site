@@ -1,61 +1,23 @@
-// =========================
-// REVEAL (animazione Apple)
-// =========================
+// REVEAL (smooth)
 
-const reveals = document.querySelectorAll(".reveal, .big-title");
+const els = document.querySelectorAll('.reveal');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
     }
   });
-},{
-  threshold: 0.18
-});
+},{ threshold:0.2 });
 
-reveals.forEach(el => observer.observe(el));
+els.forEach(el=>obs.observe(el));
 
 
-// =========================
-// PARALLAX PROFONDITÀ
-// =========================
+// PARALLAX LEGGERO
 
-const hero = document.querySelector(".hero-inner");
-const orb1 = document.querySelector(".orb-1");
-const orb2 = document.querySelector(".orb-2");
-
-window.addEventListener("scroll", () => {
-
-  const y = window.scrollY;
-
+window.addEventListener('scroll', () => {
+  const hero = document.querySelector('.hero-title');
   if(hero){
-    hero.style.transform = `translateY(${y * 0.12}px)`;
+    hero.style.transform = `translateY(${window.scrollY * 0.1}px)`;
   }
-
-  if(orb1){
-    orb1.style.transform = `translateY(${y * -0.25}px)`;
-  }
-
-  if(orb2){
-    orb2.style.transform = `translateY(${y * 0.18}px)`;
-  }
-
-}, { passive: true });
-
-
-// =========================
-// MICRO ANIMAZIONE CARD
-// =========================
-
-const cards = document.querySelectorAll(".project-card");
-
-cards.forEach(card => {
-  card.addEventListener("mouseenter", () => {
-    card.style.transform = "translateY(-6px)";
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "translateY(0)";
-  });
 });
