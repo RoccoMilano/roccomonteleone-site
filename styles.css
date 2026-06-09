@@ -6,7 +6,7 @@ body {
 }
 
 main {
-  max-width:900px;
+  max-width:920px;
   margin:auto;
   padding:0 20px;
 }
@@ -29,10 +29,11 @@ main {
 
 .hero-title {
   font-size:clamp(3rem,8vw,6rem);
-  line-height:0.95;
+  line-height:0.92;
 }
 
 .hero-sub {
+  margin-top:15px;
   color:#b7aea2;
 }
 
@@ -54,37 +55,58 @@ p {
   color:#b7aea2;
 }
 
-/* PROJECT */
+/* PROGETTI (NO elenco visivo) */
 
-.project-card {
-  margin-top:20px;
+.project {
+  margin-top:40px;
+  padding-bottom:25px;
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-/* GRID */
-
-.grid {
-  display:grid;
-  gap:20px;
+.label {
+  font-size:12px;
+  letter-spacing:0.2em;
+  color:#d49343;
 }
 
-.box {
-  border:1px solid rgba(255,255,255,0.08);
-  padding:20px;
-  border-radius:15px;
+.clients {
+  margin-top:15px;
+  font-weight:600;
 }
 
-.icon {
-  font-size:24px;
-  margin-bottom:10px;
+/* TIMELINE PREMIUM */
+
+.timeline {
+  position:relative;
 }
 
-/* TIMELINE INLINE */
+.timeline-line {
+  position:absolute;
+  left:8px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:rgba(255,255,255,0.1);
+}
 
-.timeline-inline {
+.timeline-item {
   display:flex;
-  justify-content:space-between;
   gap:20px;
+  margin-bottom:45px;
+}
+
+.timeline-dot {
+  width:14px;
+  height:14px;
+  background:#d49343;
+  border-radius:50%;
+  margin-top:5px;
+}
+
+.timeline-content span {
+  font-size:12px;
+  letter-spacing:0.2em;
+  color:#d49343;
 }
 
 /* LINK */
@@ -94,15 +116,16 @@ p {
   text-decoration:none;
 }
 
-/* ANIMATION */
+/* ANIMAZIONI */
 
 .reveal {
   opacity:0;
   transform:translateY(40px);
-  transition:0.7s ease;
+  transition:0.8s ease;
 }
 
 .reveal.show {
   opacity:1;
   transform:translateY(0);
 }
+``
