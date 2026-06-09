@@ -1,27 +1,33 @@
-// REVEAL SMOOTH (tipo Apple)
+// Reveal on scroll
+const revealNodes = document.querySelectorAll(".reveal");
 
-const elements = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(entries => {
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if(entry.isIntersecting){
+    if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
   });
-},{
-  threshold: 0.2
-});
+}, { threshold: 0.18 });
 
-elements.forEach(el => observer.observe(el));
+revealNodes.forEach(node => revealObserver.observe(node));
 
-
-// PARALLAX LEGGERO HERO
+// Parallax morbido hero + orbs
+const heroInner = document.querySelector(".hero-inner");
+const orb1 = document.querySelector(".orb-1");
+const orb2 = document.querySelector(".orb-2");
 
 window.addEventListener("scroll", () => {
-  const hero = document.querySelector(".hero-title");
+  const y = window.scrollY * 0.08;
 
-  if(hero){
-    const y = window.scrollY * 0.2;
-    hero.style.transform = `translateY(${y}px)`;
+  if (heroInner) {
+    heroInner.style.transform = `translateY(${y * 0.22}px)`;
   }
-});
+
+  if (orb1) {
+    orb1.style.transform = `translateY(${y * -0.35}px)`;
+  }
+
+  if (orb2) {
+    orb2.style.transform = `translateY(${y * 0.28}px)`;
+  }
+}, { passive: true });
