@@ -2,358 +2,116 @@
 <html lang="it">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocco Monteleone</title>
 
-<title>Rocco Monteleone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
-
-body{
-background:#050505;
-color:white;
-overflow-x:hidden;
-}
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:0 10%;
-}
-
-.hero-content{
-max-width:1200px;
-}
-
-.hero h1{
-font-size:clamp(4rem,10vw,10rem);
-font-weight:900;
-line-height:0.9;
-}
-
-.gradient{
-background:linear-gradient(90deg,#ffffff,#6dd5fa,#00ffff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.subtitle{
-margin-top:30px;
-font-size:1.5rem;
-opacity:.7;
-max-width:800px;
-}
-
-.section{
-min-height:100vh;
-padding:120px 10%;
-display:flex;
-align-items:center;
-}
-
-.section h2{
-font-size:4rem;
-margin-bottom:40px;
-}
-
-.glass{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:30px;
-padding:50px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-width:100%;
-}
-
-.card{
-padding:40px;
-border-radius:25px;
-background:rgba(255,255,255,.04);
-transition:.5s;
-}
-
-.card:hover{
-transform:translateY(-15px);
-background:rgba(255,255,255,.08);
-}
-
-.card h3{
-font-size:1.8rem;
-margin-bottom:20px;
-}
-
-.number{
-font-size:6rem;
-font-weight:900;
-background:linear-gradient(90deg,#00ffff,#ffffff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.timeline{
-max-width:1000px;
-margin:auto;
-}
-
-.timeline-item{
-padding:40px;
-margin-bottom:30px;
-border-left:2px solid cyan;
-}
-
-.timeline-item h3{
-font-size:2rem;
-margin-bottom:10px;
-}
-
-.footer{
-padding:100px 10%;
-text-align:center;
-}
-
-.reveal{
-opacity:0;
-transform:translateY(100px);
-transition:1s;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
-</style>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<canvas id="bg"></canvas>
+    <canvas id="bg"></canvas>
 
-<section class="hero">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                ROCCO<br>
+                <span class="gradient">MONTELEONE</span>
+            </h1>
 
-<div class="hero-content">
+            <p class="subtitle">
+                Chief Innovation Officer.<br>
+                Digital Transformation Leader.<br>
+                Business + Technology.
+            </p>
+        </div>
+    </section>
 
-<h1>
-ROCCO<br>
-<span class="gradient">MONTELEONE</span>
-</h1>
+    <section class="section reveal">
+        <div class="glass">
 
-<p class="subtitle">
-Chief Innovation Officer.
-Digital Transformation Leader.
-System Integrator Mindset.
-Bridge between Business and Technology.
-</p>
+            <h2>Chi Sono</h2>
 
-</div>
+            <p>
+                Da oltre 15 anni aiuto aziende e organizzazioni a trasformare
+                idee in innovazione concreta.
 
-</section>
+                Ho guidato progetti nei settori Retail, Healthcare,
+                Hospitality, Smart Building, Industry 4.0 e Manufacturing.
 
-<section class="section reveal">
+                Il mio ruolo è creare un ponte tra business e tecnologia.
+            </p>
 
-<div class="glass">
+        </div>
+    </section>
 
-<h2>Who I Am</h2>
+    <section class="section">
 
-<p style="font-size:1.4rem;line-height:1.8;">
-Creo connessioni tra persone, processi e tecnologie.
+        <div class="grid reveal">
 
-Ho guidato progetti di innovazione nei settori:
+            <div class="card">
+                <div class="number">15+</div>
+                <h3>Anni</h3>
+                <p>Esperienza professionale</p>
+            </div>
 
-Retail, Hospitality, Smart Building, Healthcare,
-Industry 4.0, Manufacturing ed Enterprise.
+            <div class="card">
+                <div class="number">360°</div>
+                <h3>Vision</h3>
+                <p>Business e Technology</p>
+            </div>
 
-La mia forza non è una tecnologia specifica.
+            <div class="card">
+                <div class="number">∞</div>
+                <h3>Innovation</h3>
+                <p>Approccio technology-neutral</p>
+            </div>
 
-La mia forza è capire il business e trasformarlo.
-</p>
+        </div>
 
-</div>
+    </section>
 
-</section>
+    <section class="section">
 
-<section class="section">
+        <div class="timeline reveal">
 
-<div class="grid reveal">
+            <h2>Journey</h2>
 
-<div class="card">
-<div class="number">15+</div>
-<h3>Anni</h3>
-<p>Esperienza nella trasformazione digitale.</p>
-</div>
+            <div class="timeline-item">
+                <h3>Econocom</h3>
+                <p>Digital Innovation Lead Solutions Architect</p>
+            </div>
 
-<div class="card">
-<div class="number">360°</div>
-<h3>Vision</h3>
-<p>Business, Processi, Persone e Tecnologia.</p>
-</div>
+            <div class="timeline-item">
+                <h3>Linea Ufficio Haster</h3>
+                <p>Chief Innovation Officer</p>
+            </div>
 
-<div class="card">
-<div class="number">∞</div>
-<h3>Innovation</h3>
-<p>Approccio technology neutral e brand independent.</p>
-</div>
+            <div class="timeline-item">
+                <h3>Next Chapter</h3>
+                <p>Ready for international opportunities.</p>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<section class="section">
+    <section class="footer">
 
-<div class="timeline reveal">
+        <h2>Let's Build The Future.</h2>
 
-<h2>Journey</h2>
+        <p>
+            LinkedIn • Email • GitHub
+        </p>
 
-<div class="timeline-item">
-<h3>Econocom</h3>
-<p>Digital Innovation Lead Solutions Architect</p>
-</div>
+    </section>
 
-<div class="timeline-item">
-<h3>Linea Ufficio Haster</h3>
-<p>Chief Innovation Officer</p>
-</div>
-
-<div class="timeline-item">
-<h3>Next Chapter</h3>
-<p>Ready for international opportunities.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="grid reveal">
-
-<div class="card">
-<h3>Retail</h3>
-</div>
-
-<div class="card">
-<h3>Industry 4.0</h3>
-</div>
-
-<div class="card">
-<h3>Smart Building</h3>
-</div>
-
-<div class="card">
-<h3>Healthcare</h3>
-</div>
-
-<div class="card">
-<h3>Hospitality</h3>
-</div>
-
-<div class="card">
-<h3>Enterprise</h3>
-</div>
-
-</div>
-
-</section>
-
-<section class="footer">
-
-<h2>Let's Build The Future.</h2>
-
-<p style="opacity:.6;margin-top:20px;">
-rocco.monteleone@email.com
-</p>
-
-</section>
-
-<script>
-
-const reveals=document.querySelectorAll('.reveal');
-
-window.addEventListener('scroll',()=>{
-
-reveals.forEach(el=>{
-
-const top=el.getBoundingClientRect().top;
-
-if(top<window.innerHeight-100){
-el.classList.add('active');
-}
-
-});
-
-});
-
-const canvas=document.getElementById('bg');
-const ctx=canvas.getContext('2d');
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let particles=[];
-
-for(let i=0;i<120;i++){
-
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*2,
-v:Math.random()*0.5
-});
-
-}
-
-function animate(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-particles.forEach(p=>{
-
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-ctx.fillStyle='rgba(0,255,255,.5)';
-ctx.fill();
-
-p.y+=p.v;
-
-if(p.y>canvas.height){
-p.y=0;
-}
-
-});
-
-requestAnimationFrame(animate);
-
-}
-
-animate();
-
-</script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
