@@ -1,164 +1,359 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocco Monteleone</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<title>Rocco Monteleone</title>
 
-  <style>
-    body {
-      margin:0;
-      font-family: 'Inter', sans-serif;
-      background:#0B0B0B;
-      color:#ffffff;
-      text-align:center;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
-    section {
-      padding: 60px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
+<style>
 
-    .hero {
-      padding-top: 120px;
-      padding-bottom: 80px;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
 
-    h1 {
-      font-size: 42px;
-      line-height: 1.3;
-      margin:0;
-    }
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
 
-    h2 {
-      font-size: 26px;
-      margin-bottom:20px;
-    }
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
 
-    p {
-      color:#bbbbbb;
-      font-size:16px;
-      line-height:1.6;
-      max-width:600px;
-      margin:10px auto;
-    }
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:0 10%;
+}
 
-    .accent {
-      color:#c9a35d;
-    }
+.hero-content{
+max-width:1200px;
+}
 
-    .divider {
-      height:1px;
-      background:#222;
-      margin:30px auto;
-      width:60%;
-    }
+.hero h1{
+font-size:clamp(4rem,10vw,10rem);
+font-weight:900;
+line-height:0.9;
+}
 
-    strong {
-      color:#ffffff;
-    }
-  </style>
+.gradient{
+background:linear-gradient(90deg,#ffffff,#6dd5fa,#00ffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+margin-top:30px;
+font-size:1.5rem;
+opacity:.7;
+max-width:800px;
+}
+
+.section{
+min-height:100vh;
+padding:120px 10%;
+display:flex;
+align-items:center;
+}
+
+.section h2{
+font-size:4rem;
+margin-bottom:40px;
+}
+
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:30px;
+padding:50px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+width:100%;
+}
+
+.card{
+padding:40px;
+border-radius:25px;
+background:rgba(255,255,255,.04);
+transition:.5s;
+}
+
+.card:hover{
+transform:translateY(-15px);
+background:rgba(255,255,255,.08);
+}
+
+.card h3{
+font-size:1.8rem;
+margin-bottom:20px;
+}
+
+.number{
+font-size:6rem;
+font-weight:900;
+background:linear-gradient(90deg,#00ffff,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.timeline{
+max-width:1000px;
+margin:auto;
+}
+
+.timeline-item{
+padding:40px;
+margin-bottom:30px;
+border-left:2px solid cyan;
+}
+
+.timeline-item h3{
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.footer{
+padding:100px 10%;
+text-align:center;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(100px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- HERO -->
+<canvas id="bg"></canvas>
+
 <section class="hero">
-  <h1>
-    Innovation is easy.<br>
-    Execution isn’t.<br>
-    <span class="accent">I make both work.</span>
-  </h1>
 
-  <p style="margin-top:20px;">
-    I design and deliver digital ecosystems that work in real companies.
-  </p>
+<div class="hero-content">
 
-  <p style="margin-top:15px; letter-spacing:3px; font-size:12px;">
-    ROCCO MONTELEONE
-  </p>
+<h1>
+ROCCO<br>
+<span class="gradient">MONTELEONE</span>
+</h1>
+
+<p class="subtitle">
+Chief Innovation Officer.
+Digital Transformation Leader.
+System Integrator Mindset.
+Bridge between Business and Technology.
+</p>
+
+</div>
+
 </section>
 
-<div class="divider"></div>
+<section class="section reveal">
 
-<!-- ANTI-CV -->
-<section>
-  <h2>I don’t sell:</h2>
-  <p>– slides that never become projects</p>
-  <p>– demos that don’t scale</p>
-  <p>– innovation without execution</p>
+<div class="glass">
+
+<h2>Who I Am</h2>
+
+<p style="font-size:1.4rem;line-height:1.8;">
+Creo connessioni tra persone, processi e tecnologie.
+
+Ho guidato progetti di innovazione nei settori:
+
+Retail, Hospitality, Smart Building, Healthcare,
+Industry 4.0, Manufacturing ed Enterprise.
+
+La mia forza non è una tecnologia specifica.
+
+La mia forza è capire il business e trasformarlo.
+</p>
+
+</div>
+
 </section>
 
-<div class="divider"></div>
+<section class="section">
 
-<!-- INTRO -->
-<section>
-  <h2>I work where things are not simple.</h2>
+<div class="grid reveal">
 
-  <p>
-    I connect technology, business and people to transform complex ideas 
-    into real projects delivered in real environments.
-  </p>
+<div class="card">
+<div class="number">15+</div>
+<h3>Anni</h3>
+<p>Esperienza nella trasformazione digitale.</p>
+</div>
 
-  <p>
-    Il mio lavoro è far funzionare l’innovazione nelle aziende reali.
-  </p>
+<div class="card">
+<div class="number">360°</div>
+<h3>Vision</h3>
+<p>Business, Processi, Persone e Tecnologia.</p>
+</div>
+
+<div class="card">
+<div class="number">∞</div>
+<h3>Innovation</h3>
+<p>Approccio technology neutral e brand independent.</p>
+</div>
+
+</div>
+
 </section>
 
-<div class="divider"></div>
+<section class="section">
 
-<!-- PROJECTS -->
-<section>
-  <h2>Projects, not promises.</h2>
+<div class="timeline reveal">
 
-  <p><strong>Healthcare</strong><br>
-  Takeda · Werfen · Villa Anna</p>
+<h2>Journey</h2>
 
-  <p><strong>Industry</strong><br>
-  Denso · Elantas · Nuovaplast</p>
+<div class="timeline-item">
+<h3>Econocom</h3>
+<p>Digital Innovation Lead Solutions Architect</p>
+</div>
 
-  <p><strong>Enterprise</strong><br>
-  Adidas · Crédit Agricole · OVS</p>
+<div class="timeline-item">
+<h3>Linea Ufficio Haster</h3>
+<p>Chief Innovation Officer</p>
+</div>
+
+<div class="timeline-item">
+<h3>Next Chapter</h3>
+<p>Ready for international opportunities.</p>
+</div>
+
+</div>
+
 </section>
 
-<div class="divider"></div>
+<section class="section">
 
-<!-- HOW I WORK -->
-<section>
-  <h2>I don’t wait for alignment. I create it.</h2>
+<div class="grid reveal">
 
-  <p>
-    I make complex projects happen inside real organizations.
-  </p>
+<div class="card">
+<h3>Retail</h3>
+</div>
+
+<div class="card">
+<h3>Industry 4.0</h3>
+</div>
+
+<div class="card">
+<h3>Smart Building</h3>
+</div>
+
+<div class="card">
+<h3>Healthcare</h3>
+</div>
+
+<div class="card">
+<h3>Hospitality</h3>
+</div>
+
+<div class="card">
+<h3>Enterprise</h3>
+</div>
+
+</div>
+
 </section>
 
-<div class="divider"></div>
+<section class="footer">
 
-<!-- EXPERIENCE -->
-<section>
-  <h2>Experience</h2>
+<h2>Let's Build The Future.</h2>
 
-  <p>Chief Innovation Officer – Haster / Linea Ufficio</p>
-  <p>Digital Innovation Architect – Econocom</p>
+<p style="opacity:.6;margin-top:20px;">
+rocco.monteleone@email.com
+</p>
+
 </section>
 
-<div class="divider"></div>
+<script>
 
-<!-- CTA -->
-<section>
-  <h2>
-    If you're building something complex<br>
-    let’s talk.
-  </h2>
+const reveals=document.querySelectorAll('.reveal');
 
-  <p style="margin-top:20px;">rocco.monteleone@gmail.com</p>
-  <p>linkedin.com/in/rmonteleone</p>
-</section>
+window.addEventListener('scroll',()=>{
+
+reveals.forEach(el=>{
+
+const top=el.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+el.classList.add('active');
+}
+
+});
+
+});
+
+const canvas=document.getElementById('bg');
+const ctx=canvas.getContext('2d');
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<120;i++){
+
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+v:Math.random()*0.5
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle='rgba(0,255,255,.5)';
+ctx.fill();
+
+p.y+=p.v;
+
+if(p.y>canvas.height){
+p.y=0;
+}
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
 
 </body>
 </html>
