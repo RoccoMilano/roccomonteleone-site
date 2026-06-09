@@ -1,18 +1,9 @@
-:root {
-  --bg:#070707;
-  --text:#f5efe6;
-  --muted:#b7aea2;
-  --accent:#d49343;
-}
-
 body {
   margin:0;
-  font-family:-apple-system, BlinkMacSystemFont, sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  font-family:-apple-system, sans-serif;
+  background:#070707;
+  color:#f5efe6;
 }
-
-/* LAYOUT */
 
 main {
   max-width:900px;
@@ -21,17 +12,17 @@ main {
 }
 
 .section {
-  padding:70px 0;
+  padding:60px 0;
 }
 
 .tight {
-  padding:50px 0;
+  padding:40px 0;
 }
 
 /* HERO */
 
 .hero {
-  min-height:95vh;
+  min-height:80vh;
   display:flex;
   align-items:center;
 }
@@ -42,8 +33,11 @@ main {
 }
 
 .hero-sub {
-  margin-top:15px;
-  color:var(--muted);
+  color:#b7aea2;
+}
+
+.accent {
+  color:#d49343;
 }
 
 /* TEXT */
@@ -57,65 +51,58 @@ main {
 }
 
 p {
-  color:var(--muted);
+  color:#b7aea2;
 }
 
 /* PROJECT */
 
 .project-card {
-  margin-top:25px;
+  margin-top:20px;
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-/* TIMELINE PREMIUM */
+/* GRID */
 
-.timeline-section {
-  position:relative;
-}
-
-.timeline-line {
-  position:absolute;
-  left:20px;
-  top:0;
-  bottom:0;
-  width:2px;
-  background:rgba(255,255,255,0.1);
-}
-
-.timeline-block {
-  display:flex;
+.grid {
+  display:grid;
   gap:20px;
-  margin-bottom:50px;
-  position:relative;
 }
 
-.timeline-dot {
-  width:14px;
-  height:14px;
-  background:var(--accent);
-  border-radius:50%;
-  margin-top:6px;
+.box {
+  border:1px solid rgba(255,255,255,0.08);
+  padding:20px;
+  border-radius:15px;
 }
 
-.timeline-label {
-  font-size:12px;
-  letter-spacing:0.2em;
-  color:var(--accent);
+.icon {
+  font-size:24px;
+  margin-bottom:10px;
 }
 
-/* ANIMAZIONI */
+/* TIMELINE INLINE */
+
+.timeline-inline {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* LINK */
+
+.link {
+  color:#d49343;
+  text-decoration:none;
+}
+
+/* ANIMATION */
 
 .reveal {
   opacity:0;
   transform:translateY(40px);
-  transition:0.8s ease;
+  transition:0.7s ease;
 }
 
 .reveal.show {
   opacity:1;
   transform:translateY(0);
-}
-
-.accent {
-  color:var(--accent);
 }
