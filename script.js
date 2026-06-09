@@ -1,33 +1,61 @@
-// Reveal on scroll
-const revealNodes = document.querySelectorAll(".reveal");
+// =========================
+// REVEAL (animazione Apple)
+// =========================
 
-const revealObserver = new IntersectionObserver((entries) => {
+const reveals = document.querySelectorAll(".reveal, .big-title");
+
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if(entry.isIntersecting){
       entry.target.classList.add("show");
     }
   });
-}, { threshold: 0.18 });
+},{
+  threshold: 0.18
+});
 
-revealNodes.forEach(node => revealObserver.observe(node));
+reveals.forEach(el => observer.observe(el));
 
-// Parallax morbido hero + orbs
-const heroInner = document.querySelector(".hero-inner");
+
+// =========================
+// PARALLAX PROFONDITÀ
+// =========================
+
+const hero = document.querySelector(".hero-inner");
 const orb1 = document.querySelector(".orb-1");
 const orb2 = document.querySelector(".orb-2");
 
 window.addEventListener("scroll", () => {
-  const y = window.scrollY * 0.08;
 
-  if (heroInner) {
-    heroInner.style.transform = `translateY(${y * 0.22}px)`;
+  const y = window.scrollY;
+
+  if(hero){
+    hero.style.transform = `translateY(${y * 0.12}px)`;
   }
 
-  if (orb1) {
-    orb1.style.transform = `translateY(${y * -0.35}px)`;
+  if(orb1){
+    orb1.style.transform = `translateY(${y * -0.25}px)`;
   }
 
-  if (orb2) {
-    orb2.style.transform = `translateY(${y * 0.28}px)`;
+  if(orb2){
+    orb2.style.transform = `translateY(${y * 0.18}px)`;
   }
+
 }, { passive: true });
+
+
+// =========================
+// MICRO ANIMAZIONE CARD
+// =========================
+
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "translateY(-6px)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "translateY(0)";
+  });
+});
