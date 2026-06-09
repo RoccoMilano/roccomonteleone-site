@@ -1,7 +1,5 @@
 :root {
-  --font-body: "Inter", sans-serif;
-  --font-display: "Inter", sans-serif;
-
+  --font: sans-serif;
   --bg: #0b0b0b;
   --text: #f5efe6;
   --muted: #b7aea2;
@@ -9,21 +7,20 @@
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-body);
+  margin:0;
+  font-family: var(--font);
   background: var(--bg);
   color: var(--text);
   transition: all 0.6s ease;
 }
 
-/* 🎯 TEMI DINAMICI */
+/* TEMI */
 
 body[data-theme="dark"] {
   --bg: #0b0b0b;
   --text: #f5efe6;
   --muted: #b7aea2;
   --accent: #d49343;
-  --font-display: "Inter", sans-serif;
 }
 
 body[data-theme="light"] {
@@ -31,20 +28,24 @@ body[data-theme="light"] {
   --text: #111;
   --muted: #666;
   --accent: #8a5a2b;
-  --font-display: "Inter", sans-serif;
-}
-
-body[data-theme="serif"] {
-  --bg: #111;
-  --text: #f5efe6;
-  --accent: #e1b980;
-  --font-display: "Georgia", serif;
 }
 
 body[data-theme="amber"] {
   --bg: #1b120b;
   --text: #fff5e8;
   --accent: #f1a54d;
+}
+
+body[data-theme="clean"] {
+  --bg: #f5f5f5;
+  --text: #111;
+}
+
+body[data-theme="serif"] {
+  --bg: #111;
+  --text: #f5efe6;
+  --accent: #e1b980;
+  font-family: Georgia, serif;
 }
 
 /* BASE */
@@ -64,8 +65,7 @@ section {
 }
 
 .hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(3rem, 8vw, 6rem);
   line-height: 0.95;
 }
 
@@ -76,15 +76,11 @@ section {
 /* TITOLI */
 
 h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
-/* 💥 TITOLI BIG */
-
 .section-title-xl {
-  font-size: clamp(3rem, 7vw, 6rem);
-  line-height: 0.95;
+  font-size: clamp(3rem, 7vw, 5rem);
 }
 
 /* TESTI */
@@ -95,36 +91,34 @@ p {
   line-height: 1.6;
 }
 
-/* REVEAL ANIMATION */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* NAV */
 
 .topbar {
   position: fixed;
   width: 100%;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  backdrop-filter: blur(10px);
+  display:flex;
+  justify-content:space-between;
+  padding:20px;
 }
 
 .nav a {
-  margin: 0 10px;
-  color: var(--muted);
+  margin:0 10px;
+  color:var(--muted);
 }
 
 .nav a.active {
-  color: var(--text);
+  color:var(--text);
 }
-``
+
+/* ANIMATION */
+
+.reveal {
+  opacity:0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity:1;
+  transform: translateY(0);
+}
