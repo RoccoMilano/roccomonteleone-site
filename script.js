@@ -6,6 +6,7 @@ const obs = new IntersectionObserver(entries=>{
       e.target.classList.add('show');
     }
   });
-});
+},{threshold:0.2});
 
 els.forEach(el=>obs.observe(el));
+``
