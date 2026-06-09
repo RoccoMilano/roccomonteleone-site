@@ -1,24 +1,24 @@
-// REVEAL ANIMATION
-const revealElements = document.querySelectorAll(".reveal");
+// REVEAL
 
-const revealObserver = new IntersectionObserver(entries => {
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if(entry.isIntersecting){
       entry.target.classList.add("show");
     }
   });
 });
 
-revealElements.forEach(el => revealObserver.observe(el));
+reveals.forEach(el => observer.observe(el));
 
-
-// 🌈 CAMBIO TEMA ALLO SCROLL
+// CAMBIO TEMA
 
 const sections = document.querySelectorAll(".theme-trigger");
 
 const themeObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if(entry.isIntersecting){
       document.body.setAttribute("data-theme", entry.target.dataset.theme);
     }
   });
@@ -26,14 +26,13 @@ const themeObserver = new IntersectionObserver(entries => {
 
 sections.forEach(section => themeObserver.observe(section));
 
-
-// 🔥 EFFETTO PARALLAX
+// PARALLAX EASY
 
 window.addEventListener("scroll", () => {
   const y = window.scrollY * 0.2;
   const hero = document.querySelector(".hero-title");
 
-  if (hero) {
+  if(hero){
     hero.style.transform = `translateY(${y * 0.3}px)`;
   }
 });
